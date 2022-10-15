@@ -1,11 +1,13 @@
 import ToDos from "./ToDos";
 
-//Post getting passed into as a list into PostList
 export default function ToDoList({ toDos = [] }) {
+  // how to implement the Toggle todo and delete todo !!!!!!!!!!
   return (
     <div>
-      {toDos.map((p, i) => (
-        <ToDos {...p} key={p.id} />
+      {toDos.map((t, i) => (
+        <div>
+          <ToDos {...t} key={t.id} />
+        </div>
       ))}
     </div>
   );

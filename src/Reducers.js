@@ -39,7 +39,7 @@ function toDoReducer(state, action) {
 
     // add the delete todo component
     case "DELETE_TODO":
-      return state.filter((state) => state.id !== action.id);
+      return state.filter((item) => item.id !== action.id);
 
     default:
       return state;
