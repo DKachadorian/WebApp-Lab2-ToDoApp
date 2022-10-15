@@ -24,6 +24,19 @@ function toDoReducer(state, action) {
       };
       return [newToDo, ...state];
 
+    // add the toggle todo component
+    case "TOGGLE_TODO":
+      return state.map((item) => {
+        if (item.id === action.id) {
+          return {
+            complete: item.complete,
+            dateCompleted: item.dateCompleted,
+          };
+        } else {
+          return item;
+        }
+      });
+
     // add the delete todo component
     case "DELETE_TODO":
       return state.filter((state) => state.id !== action.id);
