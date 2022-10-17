@@ -21,11 +21,15 @@ function App() {
     }
   }, [user]);
 
+  function handleDelete(id){
+    dispatch({type:"DELETE_TODO", id});
+  }
+
   return (
     <div>
       <UserBar user={state.user} dispatch={dispatch} />
       <br />
-      <ToDoList toDos={state.toDos} dispatch={dispatch} />
+      <ToDoList toDos={state.toDos} onDelete={handleDelete} />
       {state.user && (
         <CreateToDo user={state.user} toDos={state.toDos} dispatch={dispatch} />
       )}
